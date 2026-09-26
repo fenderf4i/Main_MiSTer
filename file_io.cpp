@@ -2197,7 +2197,7 @@ static int findAssetByCrc(char *path, size_t path_len, uint32_t romcrc, const ch
 	if (!romcrc) return 0;
 
 	snprintf(path, path_len, "%s", core_dir);
-	DIR *d = opendir(path);
+	DIR *d = opendir(getFullPath(path));
 	if (!d) {
 		printf("Couldn't open dir: %s\n", path);
 		return 0;
